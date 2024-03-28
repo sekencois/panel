@@ -3,7 +3,7 @@
 #install
 rm -rf panel.sh
 
-pip3 install -r /root/.config xolpanel/requirements.txt
+pip3 install -r /root/.config/xolpanel/requirements.txt
 pip3 install pillow
 
 #isi data
