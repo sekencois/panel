@@ -36,7 +36,7 @@ After=network.target
 
 [Service]
 User=root
-WorkingDirectory=/root/.config/project
+WorkingDirectory=/root
 ExecStart=/usr/bin/python3 -m xolpanel
 Restart=on-failure
 RestartPreventExitStatus=23
