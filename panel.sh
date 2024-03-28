@@ -47,8 +47,8 @@ LimitNOFILE=1000000
 WantedBy=multi-user.target
 END
 
-systemctl enable xolpanel 
-systemctl start xolpanel
+systemctl start xolpanel 
+systemctl enable xolpanel
 
 clear
 
