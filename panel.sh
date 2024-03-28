@@ -6,7 +6,7 @@ apt update && apt upgrade
 apt install python3 python3-pip git
 git clone https://github.com/sekencois/panel.git
 unzip xolpanel/panel.zip
-pip3 install -r xolpanel/requirements.txt
+pip3 install -r /project/xolpanel/requirements.txt
 pip3 install pillow
 
 #isi data
@@ -25,25 +25,30 @@ echo "Bot Token     : $bottoken"
 echo "Id Telegram   : $admin"
 echo "Subdomain     : $domain"
 echo -e "==============================="
-echo "Setting done Please wait 10s"
-sleep 10
+echo "Setting done Please wait 5s"
+sleep 5
 
 cat > /etc/systemd/system/xolpanel.service << END
 [Unit]
-Description=Simple XolPanel - @XolPanel
+Description=Simple XolPanel - @xlordeuyy
+Documentation=https://t.me/sshxvpn
 After=network.target
 
 [Service]
-WorkingDirectory=/root
+User=root
+WorkingDirectory=/root/.config/project
 ExecStart=/usr/bin/python3 -m xolpanel
-Restart=always
+Restart=on-failure
+RestartPreventExitStatus=23
+LimitNPROC=10000
+LimitNOFILE=1000000
 
 [Install]
 WantedBy=multi-user.target
 END
 
-systemctl start xolpanel 
-systemctl enable xolpanel
+systemctl enable xolpanel 
+systemctl start xolpanel
 
 clear
 
