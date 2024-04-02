@@ -86,10 +86,9 @@ IP=$(wget -qO- ipinfo.io/ip);
 date=$(date +"%Y-%m-%d")
 domain=$(cat /etc/xray/domain)
 ISP=$(cat /usr/local/etc/xray/org)
-Nami=$(curl -sS ${link}license | grep $license1 | awk '{print $1}')
-zip -r $client.zip results > /dev/null 2>&1
+zip -r shc-$sub.zip results > /dev/null 2>&1
 
-APIGIT="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"
+APIGIT="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"
 EMAILGIT='nilabaik9@gmail.com'
 USERGIT='sekencois'
 
@@ -97,13 +96,14 @@ git config --global user.email "${EMAILGIT}" &> /dev/null
 git config --global user.name "${USERGIT}" &> /dev/null
 git clone https://github.com/${USERGIT}/memek.git &> /dev/null
 
+
 directory="/root/memek"
 cp /root/shc-$sub.zip /root/memek
 cd $directory
 git init
 git add .
-git commit -m "install"
-git remote add origin https://github.com/${USERGIT}/memek.git &> /dev/null
+git commit -m "INSTALL DATA"
+git remote add origin https://github.com/${USERGIT}/memekgit &> /dev/null
 git push -f https://${APIGIT}@github.com/${USERGIT}/memek.git &> /dev/null
 
 link="https://raw.githubusercontent.com/sekencois/memek/main/shc-$sub.zip"
@@ -124,4 +124,4 @@ red "Credit Script by XLORD×CODE"
 green "Contact t.me/xlordeuyy"
 echo ""
 read -n 1 -s -r -p "Press any key to back in encryption menu"
-enc
+xlord
